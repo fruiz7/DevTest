@@ -1,0 +1,30 @@
+{
+  "name": "devTest",
+  "version": "0.1.0",
+  "private": true,
+  "devDependencies": {
+    "autoprefixer-loader": "^3.2.0",
+    "babel-cli": "^6.18.0",
+    "babel-loader": "^6.2.10",
+    "babel-preset-latest": "^6.16.0",
+    "babel-preset-react": "^6.16.0",
+    "babel-preset-stage-0": "^6.16.0",
+    "css-loader": "^0.26.1",
+    "json-loader": "^0.5.4",
+    "react-scripts": "0.8.5",
+    "sass-loader": "^4.1.1",
+    "style-loader": "^0.13.1"
+  },
+  "dependencies": {
+    "react": "^15.4.2",
+    "react-bootstrap": "^0.30.7",
+    "react-dom": "^15.4.2",
+    "react-icons": "^2.2.3"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  }
+}
