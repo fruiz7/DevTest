@@ -1,0 +1,11 @@
+.itemIcon {
+	width: 1.2em;
+	height: 1.2em;
+	color: #3f9fda;
+}
+
+h1 svg {
+	color: #3f9fda;
+	height: 1.5em;
+	width: 1.5em;
+}

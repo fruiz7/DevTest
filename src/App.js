@@ -1,8 +1,9 @@
 import React from 'react'
-import { Header } from './Header'
-import { DashboardItem } from './DashboardItem'
-import { DashboardItemIcon } from './DashboardItemIcon'
+import { Menu } from './Menu'
 import { DashboardSummary } from './DashboardSummary'
+import { FilterCitizenServiceRequests } from './FilterCitizenServiceRequests'
+import { FilteredResults } from './FilteredResults'
+import { Whoops404 } from './Whoops404'
 
 export const App = React.createClass ({
   getInitialState() {
@@ -20,12 +21,12 @@ export const App = React.createClass ({
         },
         {
           itemLabel: "Average rating:",
-          itemIcon: "Check",
+          itemIcon: "Star",
           itemValue: "4"
         },
         {
           itemLabel: "Most frequent request type:",
-          itemIcon: "RoadLike",
+          itemIcon: "Road",
           itemValue: "Potholes"
         },
         {
@@ -44,8 +45,16 @@ export const App = React.createClass ({
   render() {
     return (
       <div className="app">
-        <Header />
-        <DashboardSummary summaryItems={this.state.summaryItems}/>
+        <Menu />
+        {(this.props.location.pathname === "/") ? 
+          <DashboardSummary summaryItems={this.state.summaryItems}/> :
+          (this.props.location.pathname === "/filterRequests") ? 
+            <FilterCitizenServiceRequests /> :
+          (this.props.location.pathname === "/filterRequests/filteredResults") ?
+            <FilteredResults /> :
+            <Whoops404 />
+      }
+        
       </div>
     )
   }

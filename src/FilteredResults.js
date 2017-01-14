@@ -4,42 +4,34 @@ import Row from 'react-bootstrap/lib/Row';
 import Col from 'react-bootstrap/lib/Col';
 import Form from 'react-bootstrap/lib/Form';
 import Button from 'react-bootstrap/lib/Button';
-import Image from 'react-bootstrap/lib/Image';
 import ButtonGroup from 'react-bootstrap/lib/ButtonGroup';
 import ButtonToolbar from 'react-bootstrap/lib/ButtonToolbar';
 import AshevilleLike from 'react-icons/lib/md/account-balance';
-import { DashboardItem } from './DashboardItem';
-import { PropTypes } from 'react';
 import { LinkContainer } from 'react-router-bootstrap';
+import { Menu } from './Menu'
 
-export const DashboardSummary = ({summaryItems}) => (
+export const FilteredResults = () => (
 	<div>
+		<Menu />
         <Grid>
         	<Row>
 				<Col sm={12}>
 					<h1><AshevilleLike /> Citizen Service Requests</h1>
 					<fieldset>
 						<Form horizontal>
-						<Col sm={6}>
-							{summaryItems.map((item, i) => <DashboardItem key={i}
-											{...item}/>
-							)}		
 							<ButtonToolbar>
 								<ButtonGroup>		
-									<LinkContainer to='/filterRequests'>	
-										<Button bsStyle="primary">Explore data</Button>
-									</LinkContainer>	
-								</ButtonGroup>
-								<ButtonGroup>		
-									<Button>Submit request with The Asheville App</Button>		
+									<Button bsStyle="primary">Grid</Button>			
+									<Button>List</Button>		
+									<Button>Map</Button>		
 								</ButtonGroup>		
+								<ButtonGroup>
+									<LinkContainer to='/filterRequests'>	
+										<Button>Back to filter selections</Button>		
+									</LinkContainer>
+								</ButtonGroup>	
 							</ButtonToolbar>
-						</Col>
-						<Col sm={6}>
-					    	<fieldset>
-					    		<Image src="map_dashboard.PNG" responsive/>
-					    	</fieldset>
-					    </Col>
+							PUT RESULTS HERE
 						</Form>
 					</fieldset>	
 				</Col>
@@ -47,7 +39,3 @@ export const DashboardSummary = ({summaryItems}) => (
         </Grid>
      </div>
 )
-
-DashboardSummary.propTypes = {
-	items: PropTypes.array
-}
