@@ -17,31 +17,28 @@ export const DashboardSummary = ({summaryItems}) => (
         <Grid>
         	<Row>
 				<Col sm={12}>
-					<h1><AshevilleLike /> Citizen Service Requests</h1>
-					<fieldset>
-						<Form horizontal>
-						<Col sm={6}>
-							{summaryItems.map((item, i) => <DashboardItem key={i}
-											{...item}/>
-							)}		
-							<ButtonToolbar>
-								<ButtonGroup>		
-									<LinkContainer to='/filterRequests'>	
-										<Button bsStyle="primary">Explore data</Button>
-									</LinkContainer>	
-								</ButtonGroup>
-								<ButtonGroup>		
-									<Button>Submit request with The Asheville App</Button>		
-								</ButtonGroup>		
-							</ButtonToolbar>
-						</Col>
-						<Col sm={6}>
-					    	<fieldset>
-					    		<Image src="map_dashboard.PNG" responsive/>
-					    	</fieldset>
-					    </Col>
-						</Form>
-					</fieldset>	
+				<h1><AshevilleLike /> Citizen Service Requests</h1>
+				<h3>At a glance</h3>
+					<Form horizontal>
+					<Col sm={6}>
+						{summaryItems.map((item, i) => <DashboardItem key={i}
+										{...item}/>
+						)}		
+						<ButtonToolbar>
+							<ButtonGroup>		
+								<LinkContainer to='/filterRequests'>	
+									<Button bsStyle="primary">Explore data</Button>
+								</LinkContainer>	
+							</ButtonGroup>
+							<ButtonGroup>		
+								<Button>Submit request with The Asheville App</Button>		
+							</ButtonGroup>		
+						</ButtonToolbar>
+					</Col>
+					<Col sm={6} xsHidden>
+				    	<Image src="map_dashboard.PNG" responsive/>
+				    </Col>
+					</Form>
 				</Col>
           	</Row>
         </Grid>
